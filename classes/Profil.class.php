@@ -2,7 +2,7 @@
 	class Profil extends Bdd {
 
 		public function __construct() {
-			
+
 		}
 
 		public function getAllProfil() {
@@ -11,7 +11,7 @@
 			return $profils;
 		}
 
-		public functiuon getProfilById($id) {
+		public function getProfilById($id) {
 			$request = Bdd::$bdd->query('SELECT * FROM PROFIL WHERE PAX_NUM_FICHE = "'.$id.'"');
 			$profils = $request->fetchAll();
 			return $profils;
