@@ -1,13 +1,27 @@
-<!DOCTYPE html>
-<html>
-	<head>
-		<title>Check-in 40 ans AREP</title>
-		<link rel="stylesheet" href="css/style.css">
-		<meta charset="utf-8">
-		<meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
-	</head>
+<?php
+    include_once('twig/lib/Twig/Autoloader.php');
+    Twig_Autoloader::register();
+    
+    $loader = new Twig_Loader_Filesystem('views'); // Dossier contenant les templates
+    $twig = new Twig_Environment($loader, array(
+      'cache' => false
+    ));
 
-	<body>
-		
-	</body>
-</html>
+    require('classes/Bdd.class.php');
+    require('classes/Profil.class.php');
+
+    include('views/header.tpl');
+
+    $instance = new Profil();
+    $profils = $instance->getAllProfil();
+
+
+    echo $twig->render('body.tpl', array(
+    	'profils' => $profils
+    ));
+
+
+
+    include('view/footer.tpl');
+
+?> 
