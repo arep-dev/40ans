@@ -24,7 +24,5 @@
     ));
 
 
-
-    include('view/footer.tpl');
-
+    include('views/footer.tpl');
 ?> 
