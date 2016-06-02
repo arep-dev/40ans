@@ -2,34 +2,109 @@
 	margin: 0;
 	padding: 0;
 	outline: none;
+	font-size: 14px;
+}
+
+header {
+	position: fixed;
+	width: 100%;
+	z-index: 10000;
+	background: #FFF;
+}
+
+header img {
+	width: 250px;
+	display: block;
+	margin: auto;
+	padding: 20px 0px 20px 0px;
 }
 
 #list-container {
-	width: 60%;
-	margin: auto;
+	width: 50%;
+	float: left;
+	margin-left: 25px;
+	z-index: 1;
+	margin-top: 153px;
+	padding-bottom: 330px;
 }
 
 #list-container form {
 	width: 100%;
 }
 
-#list-container form label {
+#list-container form .list-container-profil {
 	width: 100%;
 	height: 60px;
-	border: 1px solid black;
+	border: 1px solid #FFF;
+	color: #FFF;
+	font-family: Oswald;
+	background: #074d97;
 	display: block;
+	position: relative;
 }
 
-#list-container form label input[type="checkbox"] {
+#list-container form .list-container-profil .hold {
 	float: left;
-	width: 10%;
-	height: 100%;
-	padding-left: 25px;
+	margin-left: 9.5px;
+	margin-right: 9.5px;
+	margin-top: 22.5px;
+	position: inherit;
+	top: 0;
+	left: 0;
 }
 
-#list-container form label p {
+#list-container form .list-container-profil i {
+	position: absolute;
+	font-size: 22px;
+	left: 10px;
+	top: 20px;
+}
+
+#list-container form .list-container-profil input[type="checkbox"] {
+	float: left;
+	margin-left: 25px;
+	margin-top: 22.5px;
+	display: none;
+}
+
+#list-container form .list-container-profil p {
 	float: left;
 	width: 80%;
+	margin-top: 10px;
+	margin-left: 50px;
+}
+
+#list-container form .list-container-profil p span {
+	color: #CCCCCC;
+	font-family: Roboto;
+}
+
+#profil-container {
+	width: calc(50% + 1px);
+	height: 300px; /* à supprimer */
+	border-top: 25px solid #FFF;
+	border-bottom: 25px solid #FFF;
+	position: fixed;
+	bottom: 0px;
+	left: 25px;
+	z-index: 1;
+	background: #074d97;
+	color: #FFF;
+}
+
+#profil-container h2 {
+	font-family: Oswald;
+	font-size: 18px;
+	text-align: center;
+	margin-top: 10px;
+}
+
+#stats {
+	width: 40%;
+	height: 400px; /* à supprimer */
+	background: red;
+	position: fixed;
+	right: 25px;
 }
 
 .clearfix {
@@ -37,3 +112,10 @@
 	overflow: hidden;
 }
 
+.actif {
+	color: #FFF !important;
+}
+
+.check {
+	color: #9E9E9E;
+}
