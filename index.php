@@ -11,11 +11,11 @@
 
     if($_SERVER['REQUEST_METHOD'] == 'POST') {
 
-        $profils = $_POST['profil'];
+        $id = $_POST['id'];
+        $statut = $_POST['statut'];
         $instance = new Profil();
-        $instance->setCheckIn($profils);
-        echo json_encode($_POST['profil']);
-
+        $instance->setCheckIn($id, $statut);
+        echo $statut;
     }else{
 
         Twig_Autoloader::register();

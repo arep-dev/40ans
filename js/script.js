@@ -11,29 +11,36 @@ $(function(){
 			}else{
 				$(this).find('.check').addClass('actif');
 				$(this).find('input').attr('value', 1);
+			}
 
-			}	
+			statut = $(this).find('input').attr('value');	
+			id = $(this).find('input').attr('name');
 
 			// On lance la requête checkin
-			checkin();
+			checkin(id, statut);
 				
 	});
 
-	function checkin() {
+	function checkin(id, statut) {
+
 		$.ajax({
 			url: 'index.php',
 			method: 'POST',
-			data: $('form').serialize(),
-			dataType: 'json',
+			data: 'statut='+statut+'&id='+id,
+			dataType: 'html',
 
 			success: function(result) {
-				var count = 0;
-				$.each(result, function(i, item) {
-					count += parseInt(result[i]);
-				});
+				//console.log('RESULT:'+result);
+				var arrival = parseInt($('.arrival').html());
+				if(result == 1) {
+					$('.arrival').html(arrival + 1)
+				}else{
+					$('.arrival').html(arrival - 1)
+					
+				}
+				var arrival = parseInt($('.arrival').html());
 				var nbInvites = parseInt($('.nbInvites').html());
-				$('.arrival').html(count);
-				$('.expected').html(nbInvites - count);
+				$('.expected').html(nbInvites - arrival);
 			},
 
 			error: function(a, b, c) {

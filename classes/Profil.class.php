@@ -24,12 +24,10 @@
 			return $arrival;
 		}
 
-		public function setCheckIn($profils) {
-			foreach($profils as $id => $statut) {
+		public function setCheckIn($id, $statut) {
 				$request = 'UPDATE PROFIL SET PAX_CHECKIN = ?, PAX_HEURE_ARRIVEE = DATE_ADD(NOW(), INTERVAL 5 MINUTE) WHERE PAX_NUM_FICHE = ?';
 				$prepare = Bdd::$bdd->prepare($request);
 				$prepare->execute(array($statut, $id));
-			}
 		}
 	}
 
