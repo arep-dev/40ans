@@ -5,7 +5,6 @@ $(function(){
 		 checkVisibility = $(this).find('.check').attr('class');
 		 test = checkVisibility.substr( checkVisibility.lastIndexOf(' ') + 1);
 	
-		 console.log(test);
 			if(test == 'actif') {
 				$(this).find('.check').removeClass('actif');
 				$(this).find('input').attr('value', 0);
@@ -15,7 +14,7 @@ $(function(){
 
 			}	
 
-
+			// On lance la requête checkin
 			checkin();
 				
 	});
@@ -28,7 +27,13 @@ $(function(){
 			dataType: 'json',
 
 			success: function(result) {
-				console.log(result);
+				var count = 0;
+				$.each(result, function(i, item) {
+					count += parseInt(result[i]);
+				});
+				var nbInvites = parseInt($('.nbInvites').html());
+				$('.arrival').html(count);
+				$('.expected').html(nbInvites - count);
 			},
 
 			error: function(a, b, c) {

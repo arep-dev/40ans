@@ -25,7 +25,7 @@ header img {
 	margin-left: 25px;
 	z-index: 1;
 	margin-top: 153px;
-	padding-bottom: 330px;
+	padding-bottom: 200px;
 }
 
 #list-container form {
@@ -81,7 +81,7 @@ header img {
 
 #profil-container {
 	width: calc(50% + 1px);
-	height: 300px; /* à supprimer */
+	height: 150px; /* à supprimer */
 	border-top: 25px solid #FFF;
 	border-bottom: 25px solid #FFF;
 	position: fixed;
@@ -101,10 +101,22 @@ header img {
 
 #stats {
 	width: 40%;
-	height: 400px; /* à supprimer */
-	background: red;
+	padding-bottom: 25px;
 	position: fixed;
 	right: 25px;
+	color: #074d97;
+	top: 154px;
+	text-align: center;
+	text-transform: uppercase;
+	font-family: Oswald;
+	font-size: 28px;
+	border: 1px solid #074d97;
+	padding-top: 25px;
+}
+
+#stats p {
+	font-size: 38px;
+	margin-bottom: 25px;
 }
 
 .clearfix {

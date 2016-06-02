@@ -29,10 +29,13 @@
 
         $instance = new Profil();
         $profils = $instance->getAllProfil();
-
+        $arrival = $instance->getProfilByArrival();
+        $nbInvites = count($profils);
 
         echo $twig->render('body.tpl', array(
-        	'profils' => $profils
+        	'profils' => $profils,
+            'nbInvites' => $nbInvites,
+            'arrival' => $arrival
         ));
 
 

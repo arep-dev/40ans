@@ -18,6 +18,12 @@
 			return $profils;
 		}
 
+		public function getProfilByArrival() {
+			$request = Bdd::$bdd->query('SELECT COUNT(*) FROM PROFIL WHERE PAX_CHECKIN = 1');
+			$arrival = $request->fetch();
+			return $arrival;
+		}
+
 		public function setCheckIn($profils) {
 			foreach($profils as $id => $statut) {
 				$request = 'UPDATE PROFIL SET PAX_CHECKIN = ?, PAX_HEURE_ARRIVEE = DATE_ADD(NOW(), INTERVAL 5 MINUTE) WHERE PAX_NUM_FICHE = ?';
