@@ -8,10 +8,12 @@ $(function(){
 	
 			if(test == 'actif') {
 				$(this).find('.check').removeClass('actif');
-				$(this).find('input').attr('value', 0);
+				$(this).find('input').attr('value', 0);	
+				$(this).attr('style', 'background: #074d97;');
 			}else{
 				$(this).find('.check').addClass('actif');
 				$(this).find('input').attr('value', 1);
+				$(this).attr('style', 'background: #0962BF;');
 			}
 
 			statut = $(this).find('input').attr('value');	
@@ -22,6 +24,14 @@ $(function(){
 				
 	});
 
+
+	$('input').focus(function(){
+		$('body').bind('touchmove', function(e){e.preventDefault()});	
+	});
+
+	$('input').focusout(function(){
+		$('body').unbind('touchmove');
+	});
 
 	$('.info-container').click(function(e){
 		e.stopPropagation();

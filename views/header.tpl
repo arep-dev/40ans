@@ -6,6 +6,7 @@
 		<meta charset="utf-8">
 		<meta name="format-detection" content="telephone=no">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no, user-scalable=no">
+		<meta name="apple-mobile-web-app-capable" content="yes">
 		<link href='https://fonts.googleapis.com/css?family=Roboto|Oswald' rel='stylesheet' type='text/css'>
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css">
 	</head>

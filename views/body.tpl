@@ -10,7 +10,7 @@
 <div id="list-container">
 	<form method="post">
 		{% for profil in profils %}
-			<div class="list-container-profil">
+			<div class="list-container-profil" style="{% if profil.PAX_CHECKIN == 1 %}background:#0962BF;{% endif %}">
 					<input type="checkbox" name="{{ profil.PAX_NUM_FICHE }}" value="{% if profil.PAX_CHECKIN == 1 %} 1 {% else %} 0 {% endif %}" class="profil{{ profil.PAX_NUM_FICHE }}" checked>
 					<i class="fa fa-check-circle-o check profil{{ profil.PAX_NUM_FICHE }} {% if profil.PAX_CHECKIN == 1 %}actif{% endif %}" aria-hidden="true"></i>
 				<p>
@@ -49,3 +49,5 @@
 	</div>
 {% endfor %}
 <div class="clearfix"></div>
+
+<div id="partenaires"></div>

@@ -5,11 +5,16 @@
 	font-size: 14px;
 }
 
+body {
+	overflow: hidden;
+}
+
 header {
 	position: fixed;
 	width: 100%;
 	z-index: 10000;
 	background: #FFF;
+	top: 0;
 }
 
 header img {
@@ -246,6 +251,15 @@ header img {
   font-size: .8em;
 }
 
+#partenaires {
+	width: 40%;
+    height: 200px;
+    background: url('../img/partenaires.png') no-repeat;
+    background-size: 100%;
+    position: fixed;
+    bottom: 25px;
+    right: 25px;
+}
 
 /* Mobile */
 
@@ -277,5 +291,9 @@ header img {
 	    position: inherit;
 	    padding-top: 0;
 	    padding-bottom: 100px;
+	}
+
+	#partenaires {
+		display: none;
 	}
 }
