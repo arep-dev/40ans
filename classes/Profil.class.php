@@ -29,6 +29,13 @@
 				$prepare = Bdd::$bdd->prepare($request);
 				$prepare->execute(array($statut, $id));
 		}
+
+		public function getProfilBySearch($search) {
+			$request = Bdd::$bdd->query('SELECT * FROM PROFIL 
+			WHERE PAX_NOM LIKE "%'.$search.'%" OR PAX_PRENOM LIKE "%'.$search.'%" OR PAX_SOCIETE LIKE "%'.$search.'%" OR PAX_DIRECTEUR_CLIENTELE LIKE "%'.$search.'%"');
+			$search = $request->fetchAll();
+			return $search;
+		}
 	}
 
 
