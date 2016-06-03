@@ -24,12 +24,13 @@ header img {
 	float: left;
 	margin-left: 25px;
 	z-index: 1;
-	margin-top: 153px;
-	padding-bottom: 200px;
+	margin-top: 211px;
+	padding-bottom: 208px;
 }
 
 #list-container form {
 	width: 100%;
+	height: 60px;
 }
 
 #list-container form .list-container-profil {
@@ -53,10 +54,10 @@ header img {
 	left: 0;
 }
 
-#list-container form .list-container-profil i {
+#list-container form .list-container-profil .fa-check-circle-o {
 	position: absolute;
 	font-size: 22px;
-	left: 10px;
+	left: 17px;
 	top: 20px;
 }
 
@@ -79,7 +80,22 @@ header img {
 	font-family: Roboto;
 }
 
-#profil-container {
+.info-container {
+	position: absolute;
+	right: 0;
+	width: 10%;
+	height: 60px;
+}
+
+.list-container-profil .fa-info-circle {
+	position: absolute;
+	right: 5px;
+	top: 5px;
+	color: #FFF;
+	font-size: 22px;
+}
+
+.profil-container {
 	width: calc(50% + 1px);
 	height: 150px; /* à supprimer */
 	border-top: 25px solid #FFF;
@@ -92,11 +108,37 @@ header img {
 	color: #FFF;
 }
 
-#profil-container h2 {
+.profil-container h2 {
 	font-family: Oswald;
 	font-size: 18px;
 	text-align: center;
-	margin-top: 10px;
+	padding-top: 6px;
+	padding-bottom: 6px;
+	background: #06417F;
+}
+
+.profil-container h2 i {
+	font-size: 22px;
+}
+
+.profil-container p {
+	font-family: Oswald;
+	text-align: center;
+	margin-top: 7px;
+	font-size: 18px;
+}
+
+.profil-container .mobile {
+	font-family: Roboto;
+	text-align: center;
+	color: #FFF;
+	text-decoration: none;
+	margin-top: 7px;
+	font-size: 22px;
+}
+
+.profil-container .bu {
+	font-size: 14px;
 }
 
 #stats {
@@ -126,8 +168,81 @@ header img {
 
 .actif {
 	color: #FFF !important;
+	opacity: 1 !important;
 }
 
 .check {
 	color: #9E9E9E;
+	opacity: 0.7;
 }
+
+.input-container {
+	width: calc(100% - 2px);
+	height: 45px;
+	background: #FFF;
+	border: 1px solid #074d97;
+}
+
+.input-container i {
+	color: #074d97;
+	font-size: 22px;
+	float: left; 
+	margin-top: 10px;
+	margin-left: 10px;
+}
+
+.input-container input {
+	width: calc(100% - 35px);
+	border: 0;
+	outline: none;
+	float: left;
+	height: 45px;
+	padding-left: 15px;
+	box-sizing: border-box;
+}
+
+#search {
+	background: #FFF;
+	position: fixed;
+	z-index:10000;
+	width: 50%;
+    margin-left: 26px;
+    top: 154px;
+    border-bottom: 10px solid #FFF;
+}
+
+#close-search {
+	position: absolute;
+	right: 10px;
+	top: 2px;
+}
+
+.chart {
+  position: relative;
+  display: inline-block;
+  width: 110px;
+  height: 110px;
+  margin-top: 25px;
+  margin-bottom: 25px;
+  text-align: center;
+}
+.chart canvas {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+.percent {
+  display: inline-block;
+  line-height: 110px;
+  z-index: 2;
+  font-family: Oswald;
+  font-size: 22px;
+  text-transform: uppercase;
+
+}
+.percent:after {
+  content: '%';
+  margin-left: 0.1em;
+  font-size: .8em;
+}
+

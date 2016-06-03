@@ -1,4 +1,5 @@
 $(function(){
+	var zindex = 3;
 
 	$('.list-container-profil').click(function(){
 
@@ -21,12 +22,33 @@ $(function(){
 				
 	});
 
+
+	$('.info-container').click(function(e){
+		e.stopPropagation();
+		profil = $(this).attr('id');
+		infoProfil(profil);
+	});
+
+
+	 $('.chart').easyPieChart({
+        lineWidth: '15',
+        lineCap: 'butt',
+        barColor: '#074d97',
+        trackColor: 'rgba(0,0,0,0.2)',
+        scaleColor: 'transparent',
+		easing: 'easeOutBounce',
+		onStep: function(from, to, percent) {
+			$(this.el).find('.percent').text(Math.round(percent));
+		}
+	});
+
+
 	function checkin(id, statut) {
 
 		$.ajax({
 			url: 'index.php',
 			method: 'POST',
-			data: 'statut='+statut+'&id='+id,
+			data: 'statut='+statut+'&id='+id+'&action=checkin',
 			dataType: 'html',
 
 			success: function(result) {
@@ -41,12 +63,21 @@ $(function(){
 				var arrival = parseInt($('.arrival').html());
 				var nbInvites = parseInt($('.nbInvites').html());
 				$('.expected').html(nbInvites - arrival);
+
+
+				$('.chart').data('easyPieChart').update((100*arrival) / nbInvites);
 			},
 
 			error: function(a, b, c) {
 				console.log(a+ ' '+b+' '+c);
 			}
 		});
+	}
+
+	function infoProfil(profil) {
+		console.log(profil);
+		$('div[client='+profil+']').css('z-index', zindex).css('display', 'block');
+		zindex++;
 	}
 
 });
